@@ -1,0 +1,16 @@
+CHIP Ram64 {
+    IN in[16], load, address[6];
+    OUT out[16];
+
+    PARTS:
+    DMux8Way(in=load, sel=address[3..5], a=O0, b=O1, c=O2, d=O3, e=O4, f=O5, g=O6, h=O7);
+    RAM8(in=in, load=O0, address=address[0..2], out=Data0);
+    RAM8(in=in, load=O1, address=address[0..2], out=Data1);
+    RAM8(in=in, load=O2, address=address[0..2], out=Data2);
+    RAM8(in=in, load=O3, address=address[0..2], out=Data3);
+    RAM8(in=in, load=O4, address=address[0..2], out=Data4);
+    RAM8(in=in, load=O5, address=address[0..2], out=Data5);
+    RAM8(in=in, load=O6, address=address[0..2], out=Data6);
+    RAM8(in=in, load=O7, address=address[0..2], out=Data7);
+    Mux8Way16(a=Data0, b=Data1, c=Data2, d=Data3, e=Data4, f=Data5, g=Data6, h=Data7, sel=address[3..5], out=out);
+} https://medium.com/swlh/building-memory-with-logic-gates-f36aec5c11b2

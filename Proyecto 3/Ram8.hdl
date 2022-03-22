@@ -1,0 +1,18 @@
+CHIP Ram8 {
+    IN in[16], load, address[3];
+    OUT out[16];
+
+    PARTS:
+    DMux8Way(in=load, sel=address, a=O0, b=O1, c=O2, d=O3, e=O4, f=O5, g=O6, h=O7);
+    Register(in=in, load=O0, out=Data0);
+    Register(in=in, load=O1, out=Data1);
+    Register(in=in, load=O2, out=Data2);
+    Register(in=in, load=O3, out=Data3);
+    Register(in=in, load=O4, out=Data4);
+    Register(in=in, load=O5, out=Data5);
+    Register(in=in, load=O6, out=Data6);
+    Register(in=in, load=O7, out=Data7);
+    Mux8Way16(a=Data0, b=Data1, c=Data2, d=Data3, e=Data4, f=Data5, g=Data6, h=Data7, sel=address, out=out);
+}
+
+// Diagrama https://medium.com/swlh/building-memory-with-logic-gates-f36aec5c11b2

@@ -1,0 +1,10 @@
+CHIP Not {
+
+    IN input;
+    OUT out;
+    PARTS:
+    // Put your code here:
+    Nand(a=input, b=input, out=out);
+ 
+    
+}

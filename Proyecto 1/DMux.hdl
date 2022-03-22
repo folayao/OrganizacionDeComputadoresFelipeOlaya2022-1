@@ -1,0 +1,8 @@
+CHIP DMux {
+
+    IN input;
+    OUT out;
+    PARTS:
+    // Put your code here:
+    
+}

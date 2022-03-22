@@ -1,0 +1,12 @@
+CHIP DFF {
+
+    IN d, clk;
+    OUT q,qp;
+    PARTS:
+    // Put your code here:
+    Nand(a=d, b=clk, out=dclk1);
+    Nand(a=d, b=d, out=dnot);
+    Nand(a=clk, b=dnot, out=dnotclk);
+    Nand(a=dclk1, b=qp, out=q);
+    Nand(a=dnotclk, b=q, out=qp);
+}

@@ -1,0 +1,21 @@
+CHIP Mux {
+    IN d0[16],d1[16],sel[16];
+    OUT out[16];
+    PARTS:
+      Mux(a=d0[0], b=d1[0], sel=sel[0], out=out[0]);
+      Mux(a=d0[1], b=d1[1], sel=sel[1], out=out[1]);
+      Mux(a=d0[2], b=d1[2], sel=sel[2], out=out[2]);
+      Mux(a=d0[3], b=d1[3], sel=sel[3], out=out[3]);
+      Mux(a=d0[4], b=d1[4], sel=sel[4], out=out[4]);
+      Mux(a=d0[5], b=d1[5], sel=sel[5], out=out[5]);
+      Mux(a=d0[6], b=d1[6], sel=sel[6], out=out[6]);
+      Mux(a=d0[7], b=d1[7], sel=sel[7], out=out[7]);
+      Mux(a=d0[8], b=d1[8], sel=sel[8], out=out[8]);
+      Mux(a=d0[9], b=d1[9], sel=sel[9], out=out[9]);
+      Mux(a=d0[10], b=d1[10], sel=sel[10], out=out[10]);
+      Mux(a=d0[11], b=d1[11], sel=sel[11], out=out[11]);
+      Mux(a=d0[12], b=d1[12], sel=sel[12], out=out[12]);
+      Mux(a=d0[13], b=d1[13], sel=sel[13], out=out[13]);
+      Mux(a=d0[14], b=d1[14], sel=sel[14], out=out[14]);
+      Mux(a=d0[15], b=d1[15], sel=sel[15], out=out[15]);
+}

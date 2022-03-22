@@ -1,0 +1,10 @@
+CHIP OneBitRegister {
+
+    IN in, load;
+    OUT out;
+    PARTS:
+    // Put your code here:
+    Mux(a=in, b=feedb, sel=load, out=outMux);
+    DFF(in=outMux, out=out, out=feedb);
+    
+}

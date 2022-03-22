@@ -1,0 +1,9 @@
+CHIP Nand {
+
+    IN a;
+    OUT out;
+    PARTS:
+    // Put your code here:
+    Not(in=a, out=out);
+    
+}

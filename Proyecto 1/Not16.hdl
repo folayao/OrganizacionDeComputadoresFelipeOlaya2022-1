@@ -1,0 +1,24 @@
+CHIP Not16{
+
+    IN input[16];
+    OUT out[16];
+    PARTS:
+    // Put your code here:
+    Nand(a=input[0], b=input[0], out=out[0]);
+    Nand(a=input[1], b=input[1], out=out[1]);
+    Nand(a=input[2], b=input[2], out=out[2]);
+    Nand(a=input[3], b=input[3], out=out[3]);
+    Nand(a=input[4], b=input[4], out=out[4]);
+    Nand(a=input[5], b=input[5], out=out[5]);
+    Nand(a=input[6], b=input[6], out=out[6]);
+    Nand(a=input[7], b=input[7], out=out[7]);
+    Nand(a=input[8], b=input[8], out=out[8]);
+    Nand(a=input[9], b=input[9], out=out[9]);
+    Nand(a=input[10], b=input[10], out=out[10]);
+    Nand(a=input[11], b=input[11], out=out[11]);
+    Nand(a=input[12], b=input[12], out=out[12]);
+    Nand(a=input[13], b=input[13], out=out[13]);
+    Nand(a=input[14], b=input[14], out=out[14]);
+    Nand(a=input[15], b=input[15], out=out[15]);
+    
+}

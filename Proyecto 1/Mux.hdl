@@ -6,4 +6,6 @@ CHIP Mux {
         And(a=d0, b=selNot, out=outD0);
         And(a=d1, b=sel, out=outD1);
         Or(a=outD0, b=outD1, out=out);
+        Mux(a=aplusnotbplusc, b=bplusnotcplusd, sel=selAB, out=bOra);
+    Mux(a=bOra, b=mult, sel=selmul, out=out);
 }

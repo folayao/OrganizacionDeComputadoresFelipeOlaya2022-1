@@ -1,0 +1,28 @@
+CHIP C1   {
+    IN a,b,c,d,selAB,selmul;
+    OUT  out ;
+    PARTS:
+    // Put your code here:
+    // suma1
+    Not(in=b, out=notb);
+    Or(a=a, b=notb, out=aplusnotb);
+    Or(a=aplusnotb, b=c, out=aplusnotbplusc); // Salida A+B'+C
+    // Suma2
+    Not(in=c, out=notc);
+    Or(a=b, b=notc, out=bplusnotc);
+    Or(a=bplusnotc, b=d, out=bplusnotcplusd); // Salida B+C'+D
+    // Multiplicacion
+    And(a=aplusnotbplusc, b=bplusnotcplusd, out=mult); // (A+B'+C)(B+C'+D)
+    //MUX
+    Not(in=selAB, out=selABNot);
+    And(a=aplusnotbplusc, b=selABNot, out=outD0Mux1);
+    And(a=bplusnotcplusd, b=selAB, out=outD1Mux1);
+    Or(a=outD0Mux1, b=outD1Mux1, out=AorB);
+    //MUX2
+    Not(in=selmul, out=selMulNot);
+    And(a=AorB, b=selMulNot, out=outD0Mux2);
+    And(a=mult, b=selmul, out=outD1Mux2);
+    Or(a=outD0Mux2, b=outD1Mux2, out=out);
+
+    
+}

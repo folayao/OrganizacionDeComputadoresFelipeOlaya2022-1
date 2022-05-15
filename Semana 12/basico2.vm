@@ -1,0 +1,21 @@
+function mult 2
+   push constant 0
+    pop local e
+    push argument 1
+     pop local 1
+                     || j = y
+ label loop
+                    //suma = 0
+                          
+     push constant 0
+     push local 1
+      eq
+        goto end
+      push local e
+       push
+            argument e
+       add
+4. роp
+            local 
+        push local
+                    1
